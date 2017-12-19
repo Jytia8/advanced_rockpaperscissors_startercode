@@ -20,11 +20,70 @@
 
 //GLOBAL VARIABLES
 
+var userChoice;
+userChoice="";
+
+var computerChoice;
+computerChoice="";
+
+var winner;
+winner="";
+
+var choices;
+choices=["rock","paper","scissors"];
 
 
 //FUNCTIONS
 
 
 
+
 // DOCUMENT READY FUNCTION
 
+$( document ).ready(function() {
+  $("#button").click(function(){
+        
+       userChoice = $("#in").val();
+    $("#user").html(userChoice);
+     
+       var randomIndex = Math.floor(Math.random() * choices.length);
+        computerChoice = choices[randomIndex];
+        
+    $("#computer").html(computerChoice);
+     
+     if ((userChoice === "rock") && (computerChoice === "scissors")) {
+            $("#winner").html("User Wins!");
+     }
+      else if ((userChoice === "rock") && (computerChice === "paper")){
+            $("#winner").html("Computer Wins!");
+     }
+      else if ((userChoice === "rock") && (computerChoice === "rock")) {
+            $("#winner").html("Tie!");
+     }
+      else if ((userChoice === "paper") && (computerChoice === "rock")) {
+            $("#winner").html("User Wins!");
+     }
+      else if ((userChoice === "paper") && (computerChoice === "scissors")) {
+            $("#winner").html("Computer Wins!");
+     }
+      else if ((userChoice === "paper") && (computerChoice === "paper")) {
+            $("#winner").html("Tie!");
+     }  
+      else if ((userChoice === "scissors") && (computerChoice === "rock")) {
+            $("#winner").html("Computer Wins!");
+     }  
+      else if ((userChoice === "scissors") && (computerChoice === "paper")) {
+            $("#winner").html("User Wins!");
+     }  
+      else if ((userChoice === "scissors") && (computerChoice === "scissors")) {
+            $("#winner").html("Tie!");
+     }  
+         
+        
+        
+        
+        
+        
+        
+  });
+});
